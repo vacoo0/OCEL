@@ -18,7 +18,6 @@ output_video_directory = f"{os.getcwd()}\\video"
 saved_video_directory = f"{output_video_directory}\\Download any Video using Python  Build Python Program to Download YouTube Videos.mp4"
 output_image_directory = f"{os.getcwd()}\\image"
 
-''' function '''
-
-frame_list = [10, 20, 30]
+''' cutting '''
+frame_list = [10, 20, 30] #second when we want to get an image
 extractImages(saved_video_directory, output_image_directory, frame_list)

@@ -20,5 +20,5 @@ output_image_directory = f"{os.getcwd()}\\image"
 
 ''' function '''
 
-frame_list = [ 10, 20, 30]
+frame_list = [10, 20, 30]
 extractImages(saved_video_directory, output_image_directory, frame_list)

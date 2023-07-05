@@ -14,7 +14,7 @@ def extractImages(pathIn, pathOut, frame_list):
             cv2.imwrite(pathOut + "\\frame%d.jpg" % count, image)     # save frame as JPEG file
         count = count + 1
 
-saved_video_directory = f"{os.getcwd()}\\video}\\Download any Video using Python  Build Python Program to Download YouTube Videos.mp4"
+saved_video_directory = f"{os.getcwd()}\\video\\Download any Video using Python  Build Python Program to Download YouTube Videos.mp4"
 output_image_directory = f"{os.getcwd()}\\image"
 
 ''' cutting '''

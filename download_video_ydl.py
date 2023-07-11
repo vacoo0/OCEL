@@ -34,6 +34,6 @@ class YouTubeDownloader:
 
 # Usage example
 if __name__ == '__main__':
-    downloader = YouTubeDownloader(save_directory='./videos', resolution='720', format='webm', framerate=None, audio=True)
+    downloader = YouTubeDownloader(save_directory='./videos', resolution='720', format='webm', framerate=None, audio=False)
     video_url = 'https://www.youtube.com/watch?v=iNBTSDryewM'
     downloader.download_video(video_url)

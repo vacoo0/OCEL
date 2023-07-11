@@ -65,12 +65,12 @@ class EventLog:
     def save_OCEL_standard(self):
         pm4py.write.write_ocel_csv(self.create_ocel(), 'logs/events/ocel_test.csv', 'logs/objects/ocel_test.csv')
 
-ev = Event(1,'4.56','making',8,'good text', 'text2', 'text1')
+# ev = Event(1,'4.56','making',8,'good text', 'text2', 'text1')
 
-log = EventLog()
-log.add_event(ev)
-obj = log.create_ocel()
-print(obj)
-print(obj.get_extended_table())
-log.save_OCEL_standard()
-# print(log.save_OCEL_standard())
+# log = EventLog()
+# log.add_event(ev)
+# obj = log.create_ocel()
+# print(obj)
+# print(obj.get_extended_table())
+# log.save_OCEL_standard()
+# # print(log.save_OCEL_standard())

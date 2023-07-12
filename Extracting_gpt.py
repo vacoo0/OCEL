@@ -43,7 +43,7 @@ for i in steps:
     start_match = re.search(start_pattern, i)
 
     if start_match:
-        time = round(float(start_match.group(1)))
+        time = float(start_match.group(1))
         start.append(time)
     else:
         print("No start value found in the step.")

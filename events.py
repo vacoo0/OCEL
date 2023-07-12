@@ -62,8 +62,8 @@ class EventLog:
                                     obj_separator = ' AND ', additional_event_attributes = ['ocel:eid','duration','summary'])
         
 
-    def save_OCEL_standard(self):
-        pm4py.write.write_ocel_csv(self.create_ocel(), 'logs/events/ocel_test.csv', 'logs/objects/ocel_test.csv')
+    def save_OCEL_standard(self, file_name='ocel_test.csv'):
+        pm4py.write.write_ocel_csv(self.create_ocel(), f'logs/events/{file_name}', f'logs/objects/{file_name}')
 
 # ev = Event(1,'4.56','making',8,'good text', 'text2', 'text1')
 

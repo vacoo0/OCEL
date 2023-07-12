@@ -30,7 +30,7 @@ class Processing:
         response = openai.Completion.create(
         model="text-davinci-003",
         prompt = """{}, based on timestamps and text give an objects, action and start for every step in format: 
-                Step i: ; Action: ; Objects: ; Start: """.format(self.transcript),
+                Step i: ; Action: ; Objects: ,... ; Start: """.format(self.transcript),
         temperature=1,
         max_tokens=2048,
         top_p=1.0,
@@ -50,7 +50,7 @@ class Processing:
         for i in range(length):
             event = Event(i, "{:.2f}".format(round(self.timestamps[i],2)), self.actions[i], None, None, " AND ".join(self.objects_text[i]), None)
             self.event_log.add_event(event)
-        self.event_log.save_OCEL_standard(file_name='ocel_test2.csv')
+        self.event_log.save_OCEL_standard(file_name='ocel_test3.csv')
 
 def extract_youtube_id(url):
     pattern = r"(?:youtu.be\/|youtube.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&\/]+)"
@@ -77,7 +77,7 @@ def extract_youtube_id(url):
 
 
 if __name__ == "__main__":
-    obj = Processing('https://www.youtube.com/watch?v=pF-13rXxGLc')
+    obj = Processing('https://www.youtube.com/watch?v=NbRDzNx1I5A')
     obj.generate_OCEL()
     
     

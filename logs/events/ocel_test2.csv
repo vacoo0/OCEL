@@ -1,0 +1,16 @@
+ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:ocel:type:items_text
+0,Use box mix,0.64,,,['Pancake']
+1,Play music,3.00,,,['Music']
+2,Make pancake,4.32,,,['Pancake']
+3,Make mixture,5.68,,,"['Flour', 'Salt', 'Baking soda', 'Sugar']"
+4,Whisk mixture,14.08,,,['Eggs']
+5,Measure,18.08,,,['Milk']
+6,Measure,22.96,,,['Vegetable oil']
+7,Mix,24.88,,,['Mixture']
+8,Heat pan,34.16,,,['Pan']
+9,Pour mixture,41.04,,,['Mixture']
+10,Cook pancake,44.08,,,['Pancake']
+11,Flip pancakes,46.72,,,['Pancakes']
+12,Cook pancakes,48.96,,,['Pancakes']
+13,Melt butter,55.76,,,['Butter']
+14,Make pancakes,58.48,,,['Pancakes']

@@ -1,3 +1,15 @@
 ocel:oid,ocel:type
-text2,ocel:type:items_text
-text1,ocel:type:items_image
+None,ocel:type:items_text
+Cocktail spirit,ocel:type:items_text
+Screen Network,ocel:type:items_text
+Robert House,ocel:type:items_text
+Pina Colada,ocel:type:items_text
+Making Pina Colada,ocel:type:items_text
+Blender,ocel:type:items_text
+Bacardi Rum,ocel:type:items_text
+Coconue Cream,ocel:type:items_text
+Heavy Cream,ocel:type:items_text
+Cocktail,ocel:type:items_text
+Consistency,ocel:type:items_text
+Pineapple,ocel:type:items_text
+Straws,ocel:type:items_text

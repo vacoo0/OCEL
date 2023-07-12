@@ -11,43 +11,48 @@ text = """
     \nStep 6: Action: Garnishing; Objects: Cocktail; Start: 34.2' 
 """
 
-pattern = r"Step \d+:.+?(?=n?Step \d+|$)"
-matches = re.findall(pattern, text, re.DOTALL)
+def extracting_gpt(text):
+    pattern = r"Step \d+:.+?(?=n?Step \d+|$)"
+    matches = re.findall(pattern, text, re.DOTALL)
 
-steps = [match.strip() for match in matches]
-obj = []
-action = []
-start = []
+    steps = [match.strip() for match in matches]
+    obj = []
+    action = []
+    start = []
 
-for i in steps:
-    objects = []
-    pattern = r"Objects: (.+?);"
-    matches = re.findall(pattern, i)
+    for i in steps:
+        objects = []
+        pattern = r"Objects: (.+?);"
+        matches = re.findall(pattern, i)
 
-    if matches:
-        objects = [obj.strip() for obj in matches[0].split(',')]
-        obj.append(objects)
-    else:
-        print("No objects found in the step.")
+        if matches:
+            objects = [obj.strip() for obj in matches[0].split(',')]
+            obj.append(objects)
+        else:
+            obj.append([None])
 
-    pattern2 = r"Action: (.+?);"
-    matches2 = re.findall(pattern2, i)
-    if matches2:
-        one_action = matches2[0].strip()
-        print(one_action)
-        action.append(one_action)
-    else:
-        print("No action found in the step.")
+        pattern2 = r"Action: (.+?);"
+        matches2 = re.findall(pattern2, i)
+        if matches2:
+            one_action = matches2[0].strip()
+            # print(one_action)
+            action.append(one_action)
+        else:
+            action.append(None)
 
-    start_pattern = r"Start: ([0-9.]+)"
-    start_match = re.search(start_pattern, i)
+        start_pattern = r"Start: ([0-9.]+)"
+        start_match = re.search(start_pattern, i)
 
-    if start_match:
-        time = float(start_match.group(1))
-        start.append(time)
-    else:
-        print("No start value found in the step.")
+        if start_match:
+            time = round(float(start_match.group(1)),2)
+            start.append(time)
+        else:
+            action.append(start)
 
-print(obj)
-print(action)
-print(start)
+
+    return obj, action, start
+
+# obj, action, start = extracting_gpt(text)
+# print(obj)
+# print(action)
+# print(start)

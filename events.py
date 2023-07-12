@@ -14,8 +14,8 @@ class Event:
         self.event_id = event_id
         self.timestamp = timestamp
         self.activity = activity
-        self.duration = duration
-        self.summary = summary
+        self.duration = duration #???
+        self.summary = summary #????
         self.items_text = items_text
         self.items_image = items_image
         
@@ -51,6 +51,7 @@ class EventLog:
             items_images.append(ev.items_image)
         df = pd.DataFrame(data={'ocel:eid':event_ids , 'time:timestamp':timestamps, 'ocel:activity':activities, 'duration':durations, 'summary':summaries, 
                        'ocel:type:items_text':items_texts, 'ocel:type:items_image':items_images})
+        # print(df)
         return df
     
     def create_ocel(self):
@@ -63,7 +64,11 @@ class EventLog:
         
 
     def save_OCEL_standard(self, file_name='ocel_test.csv'):
-        pm4py.write.write_ocel_csv(self.create_ocel(), f'logs/events/{file_name}', f'logs/objects/{file_name}')
+        pm4py.write.write_ocel_csv(self.create_ocel(), f'./logs/events/{file_name}', f'./logs/objects/{file_name}')
+        # pm4py.write.write_ocel_csv(self.create_ocel(), 'ocel_test.csv', 'ocel_test_cd.csv')
+
+
+
 
 # ev = Event(1,'4.56','making',8,'good text', 'text2', 'text1')
 

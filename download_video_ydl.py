@@ -47,6 +47,7 @@ class YouTubeDownloader:
         return self.video_path
 
     def extract_frames(self, path_out, frame_list):
+        frame_list = [int(round(num)) for num in frame_list]
         count = 0
         vidcap = cv2.VideoCapture(self._build_output_template())
         success, image = vidcap.read()
@@ -57,8 +58,8 @@ class YouTubeDownloader:
             print('Read a new frame: ', success)
             if count in frame_list:
                 # cv2.imwrite(path_out + "\\frame%d.jpg" % count, image)
-                print(f'{path_out}/{self.video_title}/frame{count}.jpg')
-                cv2.imwrite(f'{path_out}/{self.video_title}_frame{count}.jpg', image)
+                print(f'{path_out}/{self.video_title}_frame{count:03}.jpg')
+                cv2.imwrite(f'{path_out}/{self.video_title}_frame{count:03}.jpg', image)
             count = count + 1
         self.frame_dir_path = f'{path_out}'
         

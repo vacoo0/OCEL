@@ -73,6 +73,11 @@ It is important that the link does not contain 'shorts'.
 
 Sample ocel files are provided in 'logs' folder.
 
+Youtube videos for testing purposes:
+   - https://www.youtube.com/watch?v=WC_upRGlvMs&ab_channel=Mashable
+   - https://www.youtube.com/watch?v=iNBTSDryewM
+   - https://www.youtube.com/watch?v=Y5UqE_hpuSw&ab_channel=NickDiGiovanni
+
 Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.com/watch?v=Y5UqE_hpuSw).
 
 | ocel:eid | ocel:activity | ocel:timestamp | duration | ocel:type:ocel:type:items_text | ocel:type:ocel:type:items_image |

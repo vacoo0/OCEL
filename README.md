@@ -88,7 +88,8 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 ## Files description - Step by step
 ### 1. processing.py
 
- Main file which we execute.
+ Main file which we execute. The necessary libraries and modules are imported, including custom modules like events, download_video_ydl, youtube_transcript_api,     
+ extracting_gpt, and detect_objects.
  - Class Definition - Processing: The main class is defined, which represents the processing of a YouTube video. It contains methods for downloading transcripts, 
    processing with GPT (Generative Pre-trained Transformer), object recognition, summarization, generating durations, and creating an OCEL file.
  - Initialization: The Processing class is initialized with a YouTube video URL. It sets up various instance variables and creates an empty EventLog object.

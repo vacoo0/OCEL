@@ -3,6 +3,9 @@ import os
 
 
 def download_video(url, output_path):
+    """
+    Alternative to yt_dlp
+    """
     yt = YouTube(url)
     streams = yt.streams.filter(progressive=True, file_extension='mp4')
     video = streams.order_by('resolution').first()

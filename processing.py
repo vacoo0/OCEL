@@ -1,6 +1,5 @@
 from events import *
 from events import EventLog, Event
-from cut_vid import *
 from download_video_ydl import YouTubeDownloader
 from youtube_transcript_api import YouTubeTranscriptApi
 from extracting_gpt import extracting_gpt

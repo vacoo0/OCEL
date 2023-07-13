@@ -171,23 +171,55 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 
 ### 4. extracting_gpt.py
 
-
+ This code snippet performs text extraction and parsing using regular expressions (re) to extract information from a given text.
+ - Text Extraction and Parsing:
+   - The code begins with a multi-line string text that contains the input text to be processed.
+   - The extracting_gpt function takes the input text as a parameter.
+ - Regular Expression Patterns:
+   - The function defines multiple regular expression patterns to extract specific information from the text.
+ - re.findall and re.search:
+   - The function uses re.findall and re.search methods to find matches based on the defined patterns.
+   - re.findall is used to find all matches for a pattern within the text, and re.search is used to find the first match for a pattern.
+ - Extraction of Steps, Objects, Actions, and Start Times:
+   - The function extracts steps, objects, actions, and start times from the given text.
+   - It starts by finding matches for the pattern Step \d+:.+?(?=n?Step \d+|$). This pattern matches each step in the text.
+   - The extracted steps are stored in the steps list.
+   - Within each step, the function further extracts objects, actions, and start times using additional patterns.
+   - The extracted objects are split by commas and stored in the obj list.
+   - The extracted actions are stored in the action list.
+   - The extracted start times are rounded to two decimal places and stored in the start list.
+ - Returning the Extracted Information:
+   - Finally, the obj, action, and start lists are returned as the output of the extracting_gpt function.
+ - Commented Out Code:
+   - There is commented-out code that demonstrates the usage of the extracting_gpt function with the provided text variable.
+   - The extracted objects, actions, and start times are printed to showcase the results.
 
 ### 5. detect_objects.py
-
-
+  This code defines a class called ObjectDetector that performs object detection using a pre-trained YOLO model.
+ - ObjectDetector Class:
+   - The ObjectDetector class is responsible for detecting objects in frames extracted from a video.
+   - It takes parameters such as model_dir, model_type, frames_dir, and video_title during initialization.
+   - The model_dir specifies the directory containing the pre-trained YOLO model files.
+   - The model_type determines the type of YOLO model, with the default as 'yolos-tiny'.
+   - The frames_dir specifies the directory where the frames extracted from the video are stored.
+   - The video_title represents the title of the video, without the file extension.
+ - initialize_model() Method:
+   - This method initializes the object detection model and the image processor.
+   - It loads the pre-trained YOLO model using YolosForObjectDetection.from_pretrained.
+   - It also initializes the image processor using YolosImageProcessor.from_pretrained.
+ - detect_objects() Method:
+   - This method performs object detection on the frames extracted from the video.
+   - It iterates over the frame files in the frames_dir and checks if the file starts with the video_title.
+   - It opens each frame using PIL.Image.open to process it.
+   - It prepares the frame as inputs for the model using the image_processor.
+   - It passes the inputs to the model and obtains the detection results.
+   - The results are post-processed using the image_processor to obtain the detected objects.
+   - The detected objects, along with their labels, are appended to the objects_detected list.
+   - The objects_detected list is then returned.
 
 ## Features
 
 List the key features of your project here. Highlight the main functionalities or components that make your project stand out.
-
-## Contributing
-
-Explain how others can contribute to your project. Provide guidelines for submitting bug reports, feature requests, or pull requests. Include a code of conduct if applicable.
-
-## License
-
-Specify the license under which your project is distributed. Include any relevant copyright or attribution notices.
 
 ## Acknowledgements
 

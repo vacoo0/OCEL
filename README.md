@@ -103,10 +103,10 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
  - Summary Generation (Commented Out): There is a commented-out section for generating summaries of the video using the bart-large-cnn model. It is currently disabled in 
    the code.
  - Duration Calculation: The generate_durations method calculates the durations between each timestamp to determine the time duration for each step.
- - Generating OCEL: The generate_OCEL method is called to generate an OCEL file. It combines the processed data from GPT, object recognition, durations, and other         
-   information to create Event objects. These objects are added to the EventLog object, which is then saved as an OCEL file.
+ - Generating OCEL: The generate_OCEL method is called to generate an `.csv`. It combines the processed data from GPT, object recognition, durations, and other         
+   information to create Event objects. These objects are added to the EventLog object, which is then saved as a `.csv` file.
  - Helper Function - extract_youtube_id: This function extracts the YouTube video ID from a given URL using regular expressions.
- - Main Execution: An instance of the Processing class is created, and the generate_OCEL method is called with a YouTube video URL. The resulting OCEL file is saved as        'ocel_example_2.csv'.
+ - Main Execution: An instance of the Processing class is created, and the generate_OCEL method is called with a YouTube video URL. The resulting `.csv` is saved as `ocel_{*name*}.csv`.
    
 ### 2. events.py
 

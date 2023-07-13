@@ -3,6 +3,10 @@ import json
 from vosk import Model, KaldiRecognizer, SetLogLevel
 import Word as custom_Word
 
+"""
+Generating captions to video - without timestamps
+"""
+
 ''' mp4 to wav'''
 # video_file = 'C:\\Users\\Lenovo\\Desktop\\studia\\dw-project\\video\\Cosmopolitan cocktail recipe.mp4'
 #

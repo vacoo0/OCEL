@@ -111,17 +111,17 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
    - The Event class represents an event in the log and has attributes such as event_id, timestamp, activity, duration, summary, items_text, and items_image.
    - It provides an initializer method to set the attribute values.
  - EventLog Class:
-   -The EventLog class represents a collection of events.
-   -It maintains a list of Event objects in the events attribute.
-   -The class provides methods to add and remove events from the log, retrieve all events, create a pandas DataFrame from the log data, and convert the log to an OCEL 
+   - The EventLog class represents a collection of events.
+   - It maintains a list of Event objects in the events attribute.
+   - The class provides methods to add and remove events from the log, retrieve all events, create a pandas DataFrame from the log data, and convert the log to an OCEL 
     format.
-   -add_event(event: Event): Adds an event to the log by appending it to the events list.
-   -remove_event(event_id): Removes an event from the log based on its event_id.
-   -get_events(): Returns the list of events in the log.
-   -create_dataframe(): Creates a pandas DataFrame from the log data, where each column corresponds to an attribute of an event.
-   -create_ocel(): Converts the log to the OCEL format using the pm4py.convert.convert_log_to_ocel function. The log data is converted to a DataFrame and passed as an         -argument along with other OCEL-related parameters.
-   -save_OCEL_standard(file_name='ocel_test.csv'): Saves the OCEL log to CSV files (ocel_test.csv and ocel_test_cd.csv).
- - pm4py.convert.convert_log_to_ocel:
+   - add_event(event: Event): Adds an event to the log by appending it to the events list.
+   - remove_event(event_id): Removes an event from the log based on its event_id.
+   - get_events(): Returns the list of events in the log.
+   - create_dataframe(): Creates a pandas DataFrame from the log data, where each column corresponds to an attribute of an event.
+   - create_ocel(): Converts the log to the OCEL format using the pm4py.convert.convert_log_to_ocel function. The log data is converted to a DataFrame and passed as an          argument along with other OCEL-related parameters.
+   - save_OCEL_standard(file_name='ocel_test.csv'): Saves the OCEL log to CSV files (ocel_test.csv and ocel_test_cd.csv).
+   - pm4py.convert.convert_log_to_ocel:
 
 This is a function provided by the pm4py library.
 It converts a log (EventLog, EventStream, or DataFrame) to the OCEL format.

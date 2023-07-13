@@ -9,7 +9,7 @@ class ObjectDetector:
         self.model_dir = model_dir
         self.model_type = model_type
         self.frames_dir = frames_dir
-        self.video_title = video_title
+        self.video_title = video_title.rsplit('.', 1)[0]  # remove file extension, if any
         self.model = None
         self.image_processor = None
 

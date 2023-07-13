@@ -1,9 +1,10 @@
 from events import *
 from events import EventLog, Event
 from cut_vid import *
-from download_video_ydl import *
+from download_video_ydl import YouTubeDownloader
 from youtube_transcript_api import YouTubeTranscriptApi
 from extracting_gpt import extracting_gpt
+from detect_objects import ObjectDetector
 import re
 import os
 import openai
@@ -17,6 +18,7 @@ class Processing:
         self.transcript = self.download_transcripts()
         self.timestamps = None
         self.objects_text = None
+        self.objects_image = None
         self.actions = None
         self.event_log = EventLog()
 
@@ -42,15 +44,27 @@ class Processing:
         objects, actions, start = extracting_gpt(text)
         self.timestamps = start 
         self.objects_text = objects 
-        self.actions = actions 
+        self.actions = actions
+
+    def object_recognition(self):
+        ytd = YouTubeDownloader(save_directory='./videos', resolution='720',
+                                       format='mp4', framerate=None, audio=False)
+        ytd.download_video(self.url)
+        ytd.extract_frames('./frames', self.timestamps)
+        detector = ObjectDetector('./models/yolos-tiny', video_title=ytd.video_title)
+        detector.initialize_model()
+        self.objects_image = detector.detect_objects()
 
     def generate_OCEL(self):
         self.gpt_processing()
+        self.object_recognition()
         length = len(self.actions)
         for i in range(length):
-            event = Event(i, "{:.2f}".format(round(self.timestamps[i],2)), self.actions[i], None, None, " AND ".join(self.objects_text[i]), None)
+            event = Event(i, "{:.2f}".format(round(self.timestamps[i],2)), self.actions[i],
+                          None, None, " AND ".join(self.objects_text[i]), " AND ".join(self.objects_image[i]))
             self.event_log.add_event(event)
-        self.event_log.save_OCEL_standard(file_name='ocel_test3.csv')
+        self.event_log.save_OCEL_standard(file_name='ocel_test4.csv')
+
 
 def extract_youtube_id(url):
     pattern = r"(?:youtu.be\/|youtube.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&\/]+)"
@@ -60,20 +74,6 @@ def extract_youtube_id(url):
         return match.group(1)
     else:
         return None
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":

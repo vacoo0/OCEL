@@ -10,8 +10,6 @@ A brief description of your project goes here.
 - [Usage](#usage)
 - [Example Results](#example-results)
 - [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Description
 

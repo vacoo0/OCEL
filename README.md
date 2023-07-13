@@ -86,7 +86,7 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 | 8  | Eating                   | 54.56  | 0.00  | ['soup dumplings']  | ['person', 'spoon', 'bowl']  |
 
 ## Files description - Step by step
-# 1. processing.py
+### 1. processing.py
    
  - Class Definition - Processing: The main class is defined, which represents the processing of a YouTube video. It contains methods for downloading transcripts, 
    processing with GPT (Generative Pre-trained Transformer), object recognition, summarization, generating durations, and creating an OCEL file.
@@ -104,7 +104,7 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
  - Helper Function - extract_youtube_id: This function extracts the YouTube video ID from a given URL using regular expressions.
  - Main Execution: An instance of the Processing class is created, and the generate_OCEL method is called with a YouTube video URL. The resulting OCEL file is saved as        'ocel_example_2.csv'.
    
-# 2. events.py
+### 2. events.py
 
  This code defines two classes: Event and EventLog, and provides methods for creating an OCEL (Object-Action-Start-End Log) file from an EventLog object.
  - Event Class:
@@ -129,9 +129,18 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
    - There is a commented-out section that demonstrates the usage of the Event and EventLog classes.
    - An Event object is created, added to an EventLog object, and converted to OCEL format.
    - The OCEL log is then saved to CSV files.
-# 3. download_video_ydl.py
-5. extracting_gpt.py
-6. detect_objects.py
+     
+### 3. download_video_ydl.py
+
+
+
+### 4. extracting_gpt.py
+
+
+
+### 5. detect_objects.py
+
+
 
 ## Features
 

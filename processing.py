@@ -70,7 +70,7 @@ class Processing:
             self.durrations.append(self.timestamps[i+1]-self.timestamps[i])
         self.durrations.append(0)
     
-    def generate_OCEL(self):
+    def generate_OCEL(self, file_name='ocel_test8.csv'):
         self.gpt_processing()
         self.object_recognition()
         # self.summary()
@@ -81,7 +81,7 @@ class Processing:
             event = Event(i, "{:.2f}".format(round(self.timestamps[i],2)), self.actions[i],
                           "{:.2f}".format(round(self.durrations[i],2)), None, " AND ".join(self.objects_text[i]), " AND ".join(self.objects_image[i]))
             self.event_log.add_event(event)
-        self.event_log.save_OCEL_standard(file_name='ocel_test8.csv')
+        self.event_log.save_OCEL_standard(file_name)
 
 
 def extract_youtube_id(url):
@@ -95,7 +95,7 @@ def extract_youtube_id(url):
 
 
 if __name__ == "__main__":
-    obj = Processing('https://www.youtube.com/watch?v=I3qwK-eXEIc')
-    obj.generate_OCEL()
+    obj = Processing('https://www.youtube.com/watch?v=Y5UqE_hpuSw')
+    obj.generate_OCEL('ocel_example_2.csv')
     
     

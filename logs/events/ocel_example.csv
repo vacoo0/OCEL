@@ -1,0 +1,15 @@
+ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:ocel:type:items_text,ocel:type:ocel:type:items_image
+0,Making soup dumplings,0.08,1.92,,['None'],"['person', 'dining table', 'cup']"
+1,Taking Chinese,2.00,1.44,,['None'],"['person', 'cup']"
+2,Pronouncing Xiaolongbao,3.44,1.68,,['None'],"['person', 'cup']"
+3,Adding ingredients,5.12,2.96,,"['Foie Gras', 'Green Onion', 'Ginger', 'Chicken Stock']","['person', 'cup']"
+4,Boiling,8.08,4.64,,"['Foie Gras', 'Green Onion', 'Ginger', 'Chicken Stock']","['person', 'bowl']"
+5,Adding Gelatin,12.72,5.76,,"['Foie Gras', 'Green Onion', 'Ginger', 'Chicken Stock']",['person']
+6,Cooling in fridge,18.48,1.68,,['Gelatin Mixture'],"['person', 'bowl']"
+7,Mincing Green Onion,20.16,1.52,,['Green Onion'],['person']
+8,Adding ingredients,21.68,4.08,,"['Rice Wine', 'Sesame Oil', 'Soy Sauce', 'Sugar', 'Ground Pork']",['person']
+9,Boiling,25.76,3.12,,"['Rice Wine', 'Sesame Oil', 'Soy Sauce', 'Sugar', 'Ground Pork']",['person']
+10,Adding Gelatin Mixture,28.88,4.32,,['Gelatin Mixture'],"['person', 'dining table']"
+11,Building dumplings,33.20,3.76,,['Filling'],"['person', 'banana']"
+12,Crimping edges,36.96,9.28,,['Filling'],
+13,Making sauce,46.24,0.00,,"['Balsamic Vinegar', 'Soy Sauce', 'Julienned Ginger']",['cake']

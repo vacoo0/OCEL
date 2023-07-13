@@ -5,8 +5,10 @@ A brief description of your project goes here.
 ## Table of Contents
 
 - [Project Description](#project-description)
+- [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Example Results](#example-results)
 - [Features](#features)
 - [Contributing](#contributing)
 - [License](#license)
@@ -40,7 +42,7 @@ pip install -r requirements.txt
 The next step is to download the *yolos-tiny* model to the `models` folder, this can be done with the following command:
 
 ```bash
-git clone https://huggingface.co/hustvl/yolos-tiny
+git lfs clone https://huggingface.co/hustvl/yolos-tiny
 ```
 
 To make use of GPT-3.5, follow these steps:
@@ -51,7 +53,37 @@ To make use of GPT-3.5, follow these steps:
 
 ## Usage
 
-Explain how to use your project. Provide examples and code snippets if necessary. Include any configuration options or environment variables that need to be set.
+To generate an OCEL (Object-centric event logs), follow these steps:
+
+1. Create a `Processing` class object and provide a link to a YouTube video as an argument.
+2. Call the `.generate_OCEL()` method on the processing class object.
+   - Optionally, specify the name of the file where the eventlog is to be saved.
+3. The generated event log can be found in the `logs/events` folder.
+4. The generated objects can be found in the `logs/objects` folder.
+
+Example (from `processing.py`):
+```python
+if __name__ == "__main__":
+    obj = Processing('https://www.youtube.com/watch?v=Y5UqE_hpuSw')
+    obj.generate_OCEL('ocel_example.csv')
+```
+It is important that the link does not contain 'shorts'. 
+
+## Example Results
+
+Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.com/watch?v=Y5UqE_hpuSw).
+
+| ocel:eid | ocel:activity | ocel:timestamp | duration | ocel:type:ocel:type:items_text | ocel:type:ocel:type:items_image |
+|----------|----------|----------|----------|----------|----------|
+| 0  | Making soup dumplings    | 0.08     | 8.00   | ['ingredients']   | ['person', 'dining table', 'cup']   |
+| 1  | Adding foie gras         | 8.08  | 3.84 | ['two tablespoons foie gras']  | ['person', 'cup']  |
+| 2  | Boiling Stock            | 11.92  | 6.56 | ['chicken stock']  | ['person', 'cup'] |
+| 3  | Cooling  | 18.48         | 1.68  | ['gelatin mixture']  | ['person', 'cup'] |
+| 4  | Preparing filling        | 20.16  | 13.04  | ['one minced green onion', 'one tablespoon of rice wine', 'one and a half teaspoon of sesame oil', 'teaspoon of soy sauce', 'one and a half teaspoons of sugar', 'about a half a pound of ground pork', 'a little salt and a little pepper', 'gelatin mixture']  | ['person', 'bowl']  |
+| 5  | Building dumplings       | 33.20  | 10.80  | ['filling']  |   |
+| 6  | Steaming dumplings       | 44.00  | 2.24  | ['bamboo steamer', 'aluminum foil ball plate', 'dumplings']  | ['person']  |
+| 7  | Making sauce             | 46.24  | 8.32 | ['balsamic vinegar', 'soy sauce', 'julienned ginger']  | ['person'] |
+| 8  | Eating                   | 54.56  | 0.00  | ['soup dumplings']  | ['person', 'spoon', 'bowl']  |
 
 ## Features
 
@@ -67,7 +99,10 @@ Specify the license under which your project is distributed. Include any relevan
 
 ## Acknowledgements
 
-If your project relies on or was inspired by other works, mention them here. Provide links or references to any external resources that were helpful in creating your project.
+Below are some useful links.
+1. [https://openai.com/](https://openai.com/)
+2. [https://huggingface.co/hustvl/yolos-tiny](https://huggingface.co/hustvl/yolos-tiny)
+3. [https://ocel-standard.org/](https://ocel-standard.org/)
 
 ## Contact
 

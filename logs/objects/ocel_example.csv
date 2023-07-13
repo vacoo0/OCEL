@@ -1,0 +1,21 @@
+ocel:oid,ocel:type
+None,ocel:type:items_text
+person,ocel:type:items_image
+dining table,ocel:type:items_image
+cup,ocel:type:items_image
+Foie Gras,ocel:type:items_text
+Green Onion,ocel:type:items_text
+Ginger,ocel:type:items_text
+Chicken Stock,ocel:type:items_text
+bowl,ocel:type:items_image
+Gelatin Mixture,ocel:type:items_text
+Rice Wine,ocel:type:items_text
+Sesame Oil,ocel:type:items_text
+Soy Sauce,ocel:type:items_text
+Sugar,ocel:type:items_text
+Ground Pork,ocel:type:items_text
+Filling,ocel:type:items_text
+banana,ocel:type:items_image
+Balsamic Vinegar,ocel:type:items_text
+Julienned Ginger,ocel:type:items_text
+cake,ocel:type:items_image

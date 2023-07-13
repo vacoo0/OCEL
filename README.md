@@ -71,6 +71,8 @@ It is important that the link does not contain 'shorts'.
 
 ## Example Results
 
+Sample ocel files are provided in 'logs' folder.
+
 Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.com/watch?v=Y5UqE_hpuSw).
 
 | ocel:eid | ocel:activity | ocel:timestamp | duration | ocel:type:ocel:type:items_text | ocel:type:ocel:type:items_image |
@@ -195,6 +197,7 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
    - The extracted objects, actions, and start times are printed to showcase the results.
 
 ### 5. detect_objects.py
+
   This code defines a class called ObjectDetector that performs object detection using a pre-trained YOLO model.
  - ObjectDetector Class:
    - The ObjectDetector class is responsible for detecting objects in frames extracted from a video.

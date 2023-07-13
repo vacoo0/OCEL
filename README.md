@@ -1,7 +1,5 @@
 # Creating object-centric event logs from instructional/tutorial/how to videos
 
-A brief description of your project goes here.
-
 ## Table of Contents
 
 - [Project Description](#project-description)

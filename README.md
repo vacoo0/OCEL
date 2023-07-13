@@ -7,6 +7,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example Results](#example-results)
+- [Files description - Step by step](#files-description---Step-by-step)
 - [Features](#features)
 
 ## Project Description

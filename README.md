@@ -108,8 +108,8 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 
  This code defines two classes: Event and EventLog, and provides methods for creating an OCEL (Object-Action-Start-End Log) file from an EventLog object.
  - Event Class:
-   -The Event class represents an event in the log and has attributes such as event_id, timestamp, activity, duration, summary, items_text, and items_image.
-   -It provides an initializer method to set the attribute values.
+   - The Event class represents an event in the log and has attributes such as event_id, timestamp, activity, duration, summary, items_text, and items_image.
+   - It provides an initializer method to set the attribute values.
  - EventLog Class:
    -The EventLog class represents a collection of events.
    -It maintains a list of Event objects in the events attribute.

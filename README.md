@@ -104,7 +104,33 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
  - Helper Function - extract_youtube_id: This function extracts the YouTube video ID from a given URL using regular expressions.
  - Main Execution: An instance of the Processing class is created, and the generate_OCEL method is called with a YouTube video URL. The resulting OCEL file is saved as        'ocel_example_2.csv'.
    
-3. events.py
+2. events.py
+
+ This code defines two classes: Event and EventLog, and provides methods for creating an OCEL (Object-Action-Start-End Log) file from an EventLog object.
+ - Event Class:
+   -The Event class represents an event in the log and has attributes such as event_id, timestamp, activity, duration, summary, items_text, and items_image.
+   -It provides an initializer method to set the attribute values.
+ - EventLog Class:
+   -The EventLog class represents a collection of events.
+   -It maintains a list of Event objects in the events attribute.
+   -The class provides methods to add and remove events from the log, retrieve all events, create a pandas DataFrame from the log data, and convert the log to an OCEL 
+    format.
+   -add_event(event: Event): Adds an event to the log by appending it to the events list.
+   -remove_event(event_id): Removes an event from the log based on its event_id.
+   -get_events(): Returns the list of events in the log.
+   -create_dataframe(): Creates a pandas DataFrame from the log data, where each column corresponds to an attribute of an event.
+   -create_ocel(): Converts the log to the OCEL format using the pm4py.convert.convert_log_to_ocel function. The log data is converted to a DataFrame and passed as an         -argument along with other OCEL-related parameters.
+   -save_OCEL_standard(file_name='ocel_test.csv'): Saves the OCEL log to CSV files (ocel_test.csv and ocel_test_cd.csv).
+ - pm4py.convert.convert_log_to_ocel:
+
+This is a function provided by the pm4py library.
+It converts a log (EventLog, EventStream, or DataFrame) to the OCEL format.
+It takes parameters such as log, activity_column, timestamp_column, object_types, obj_separator, and additional_event_attributes to specify the columns and attributes in the OCEL log.
+Main Execution (Commented Out):
+
+There is a commented-out section that demonstrates the usage of the Event and EventLog classes.
+An Event object is created, added to an EventLog object, and converted to OCEL format.
+The OCEL log is then saved to CSV files.
 4. download_video_ydl.py
 5. extracting_gpt.py
 6. detect_objects.py

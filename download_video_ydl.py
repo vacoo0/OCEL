@@ -55,6 +55,9 @@ class YouTubeDownloader:
         vidcap = cv2.VideoCapture(self._build_output_template())
         success, image = vidcap.read()
         #success = True
+        if not success:
+            raise IOError(f'Error opening {self.video_title}')
+
         while success:
             vidcap.set(cv2.CAP_PROP_POS_MSEC,(count*1000))
             success, image = vidcap.read()

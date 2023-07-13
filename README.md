@@ -122,7 +122,7 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
    - add_event(event: Event): Adds an event to the log by appending it to the events list.
    - remove_event(event_id): Removes an event from the log based on its event_id.
    - get_events(): Returns the list of events in the log.
-   - create_dataframe(): Creates a pandas DataFrame from the log data, where each column corresponds to an attribute of an event.
+   - create_dataframe(): Creates a pandas DataFrame from the events data, where each column corresponds to an attribute of an event.
    - create_ocel(): Converts the log to the OCEL format using the pm4py.convert.convert_log_to_ocel function. The log data is converted to a DataFrame and passed as an          argument along with other OCEL-related parameters.
    - save_OCEL_standard(file_name='ocel_test.csv'): Saves the OCEL log to CSV files (ocel_test.csv and ocel_test_cd.csv).
  - pm4py.convert.convert_log_to_ocel:

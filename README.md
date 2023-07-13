@@ -75,7 +75,7 @@ Sample ocel files are provided in 'logs' folder.
 
 Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.com/watch?v=Y5UqE_hpuSw).
 
-| ocel:eid | ocel:activity | ocel:timestamp | duration | ocel:type:ocel:type:items_text | ocel:type:ocel:type:items_image |
+| ocel:eid | ocel:activity | ocel:timestamp | duration | ocel:type:items_text | ocel:type:items_image |
 |----------|----------|----------|----------|----------|----------|
 | 0  | Making soup dumplings    | 0.08     | 8.00   | ['ingredients']   | ['person', 'dining table', 'cup']   |
 | 1  | Adding foie gras         | 8.08  | 3.84 | ['two tablespoons foie gras']  | ['person', 'cup']  |

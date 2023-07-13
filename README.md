@@ -85,6 +85,30 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 | 7  | Making sauce             | 46.24  | 8.32 | ['balsamic vinegar', 'soy sauce', 'julienned ginger']  | ['person'] |
 | 8  | Eating                   | 54.56  | 0.00  | ['soup dumplings']  | ['person', 'spoon', 'bowl']  |
 
+## Files description - Step by step
+1. processing.py
+   
+ - Class Definition - Processing: The main class is defined, which represents the processing of a YouTube video. It contains methods for downloading transcripts, 
+   processing with GPT (Generative Pre-trained Transformer), object recognition, summarization, generating durations, and creating an OCEL file.
+ - Initialization: The Processing class is initialized with a YouTube video URL. It sets up various instance variables and creates an empty EventLog object.
+ - Downloading Transcripts: The download_transcripts method is called to download the video's transcripts using the YouTubeTranscriptApi library.
+ - GPT Processing: The gpt_processing method is called, which utilizes the OpenAI GPT-3.5 model to process the transcripts and generate objects, actions, and start times 
+   for each step.
+ - Object Recognition: The object_recognition method is called to download the YouTube video and extract frames at the specified timestamps. It then uses an object 
+   detection model to identify objects in the extracted frames.
+ - Summary Generation (Commented Out): There is a commented-out section for generating summaries of the video using the bart-large-cnn model. It is currently disabled in 
+   the code.
+ - Duration Calculation: The generate_durations method calculates the durations between each timestamp to determine the time duration for each step.
+ - Generating OCEL: The generate_OCEL method is called to generate an OCEL file. It combines the processed data from GPT, object recognition, durations, and other         
+   information to create Event objects. These objects are added to the EventLog object, which is then saved as an OCEL file.
+ - Helper Function - extract_youtube_id: This function extracts the YouTube video ID from a given URL using regular expressions.
+ - Main Execution: An instance of the Processing class is created, and the generate_OCEL method is called with a YouTube video URL. The resulting OCEL file is saved as        'ocel_example_2.csv'.
+   
+3. events.py
+4. download_video_ydl.py
+5. extracting_gpt.py
+6. detect_objects.py
+
 ## Features
 
 List the key features of your project here. Highlight the main functionalities or components that make your project stand out.

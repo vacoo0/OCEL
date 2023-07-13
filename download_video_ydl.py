@@ -18,7 +18,6 @@ class YouTubeDownloader:
             info_dict = ydl.extract_info(video_url, download=False)
             self.video_title = info_dict.get('title', None)
             self.video_title = self.video_title.replace(' ', '_')
-            self.video_title = self.video_title.replace('\#', '')
 
         ydl_opts = {
             'format': self._build_format_string(),
@@ -26,11 +25,6 @@ class YouTubeDownloader:
         }
         
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-            info_dict = ydl.extract_info(video_url, download=False)
-            self.video_title = info_dict.get('title', None)
-            self.video_title = self.video_title.replace(' ', '_')
-            self.video_title = self.video_title.replace('\#', '')
-
             ydl.download([video_url])
     
     def _build_format_string(self):
@@ -46,15 +40,24 @@ class YouTubeDownloader:
         return format_string
     
     def _build_output_template(self):
+        if not os.path.exists(self.save_directory):
+            os.makedirs(self.save_directory)
+
         self.video_path = f'{self.save_directory}/{self.video_title}.{self.format}'
         return self.video_path
 
     def extract_frames(self, path_out, frame_list):
+        if not os.path.exists(path_out):
+            os.makedirs(path_out)
+
         frame_list = [int(round(num)) for num in frame_list]
         count = 0
         vidcap = cv2.VideoCapture(self._build_output_template())
         success, image = vidcap.read()
-        # success = True
+        #success = True
+        if not success:
+            raise IOError(f'Error opening {self.video_title}')
+
         while success:
             vidcap.set(cv2.CAP_PROP_POS_MSEC,(count*1000))
             success, image = vidcap.read()

@@ -10,7 +10,6 @@ import os
 import openai
 from transformers import pipeline
 
-
 openai.api_key = "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"
 
 
@@ -38,7 +37,7 @@ class Processing:
         prompt = """{}, based on timestamps and text give an objects, action and start for every step in format: 
                 Step i: ; Action: ; Objects: ,... ; Start: """.format(self.transcript),
         temperature=1,
-        max_tokens=2800,
+        max_tokens=2048,
         top_p=1.0,
         frequency_penalty=0.0,
         presence_penalty=0.0
@@ -77,11 +76,12 @@ class Processing:
         # self.summary()
         self.generate_durations()
         length = len(self.actions)
+        print(len(self.timestamps), len(self.actions), len(self.durrations), len(self.objects_text), len(self.objects_image))
         for i in range(length):
             event = Event(i, "{:.2f}".format(round(self.timestamps[i],2)), self.actions[i],
                           "{:.2f}".format(round(self.durrations[i],2)), None, " AND ".join(self.objects_text[i]), " AND ".join(self.objects_image[i]))
             self.event_log.add_event(event)
-        self.event_log.save_OCEL_standard(file_name='ocel_test6.csv')
+        self.event_log.save_OCEL_standard(file_name='ocel_test8.csv')
 
 
 def extract_youtube_id(url):
@@ -95,7 +95,7 @@ def extract_youtube_id(url):
 
 
 if __name__ == "__main__":
-    obj = Processing('https://www.youtube.com/watch?v=ZSNZ68FoaJI&ab_channel=StevetheBartender')
+    obj = Processing('https://www.youtube.com/watch?v=I3qwK-eXEIc')
     obj.generate_OCEL()
     
     

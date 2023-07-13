@@ -19,9 +19,35 @@ By leveraging computer vision techniques and natural language processing, this p
 
 The extracted information will be used to construct object-centric event logs, which will capture the temporal order of actions performed on each object. These event logs can be invaluable for various applications, including process automation, knowledge extraction, or interactive tutorials.
 
+## Overview
+
+Below is a simplified diagram of how our project works.
+
+<div align="center">
+  <img src="simple_diagram.png" alt="Project Architecture" width="400px" />
+</div>
+
+As you can see above, the link to the video on youtube is selected first. Then the transcript is downloaded with timestamps, which are fed to gpt-3.5, which combines fragments of the transcript and returns new timestamps (several timestamps may have been combined) and detected objects and actions. In the next step, the entire film is downloaded, from which the appropriate frames are selected, using previously corrected timestamps. Objects are detected on each frame. Based on all the information collected in this way, an object-centric event log is created.
+
 ## Installation
 
-Provide step-by-step instructions on how to install your project locally. Include any prerequisites or dependencies required to run the project.
+To successfully run the code, ensure that you have installed all the libraries listed in the `requirements.txt` file. You can do this by running the following command:
+
+```bash
+pip install -r requirements.txt
+```
+
+The next step is to download the *yolos-tiny* model to the `models` folder, this can be done with the following command:
+
+```bash
+git clone https://huggingface.co/hustvl/yolos-tiny
+```
+
+To make use of GPT-3.5, follow these steps:
+
+1. Open the `processing.py` file in your project.
+2. Locate line 13 and find the code snippet `openai.api_key = ""`.
+3. Replace the empty string `""` with your own API key within the quotation marks.
 
 ## Usage
 

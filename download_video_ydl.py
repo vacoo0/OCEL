@@ -18,6 +18,7 @@ class YouTubeDownloader:
             info_dict = ydl.extract_info(video_url, download=False)
             self.video_title = info_dict.get('title', None)
             self.video_title = self.video_title.replace(' ', '_')
+            self.video_title = self.video_title.replace('\#', '')
 
         ydl_opts = {
             'format': self._build_format_string(),
@@ -28,6 +29,8 @@ class YouTubeDownloader:
             info_dict = ydl.extract_info(video_url, download=False)
             self.video_title = info_dict.get('title', None)
             self.video_title = self.video_title.replace(' ', '_')
+            self.video_title = self.video_title.replace('\#', '')
+
             ydl.download([video_url])
     
     def _build_format_string(self):
@@ -51,7 +54,7 @@ class YouTubeDownloader:
         count = 0
         vidcap = cv2.VideoCapture(self._build_output_template())
         success, image = vidcap.read()
-        #success = True
+        # success = True
         while success:
             vidcap.set(cv2.CAP_PROP_POS_MSEC,(count*1000))
             success, image = vidcap.read()

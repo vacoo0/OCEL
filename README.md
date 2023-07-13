@@ -87,7 +87,8 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 
 ## Files description - Step by step
 ### 1. processing.py
-   
+
+ Main file which we execute.
  - Class Definition - Processing: The main class is defined, which represents the processing of a YouTube video. It contains methods for downloading transcripts, 
    processing with GPT (Generative Pre-trained Transformer), object recognition, summarization, generating durations, and creating an OCEL file.
  - Initialization: The Processing class is initialized with a YouTube video URL. It sets up various instance variables and creates an empty EventLog object.
@@ -132,7 +133,41 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
      
 ### 3. download_video_ydl.py
 
-
+ This code defines a class called YouTubeDownloader that provides functionality to download YouTube videos and extract frames from them.
+ - YouTubeDownloader Class:
+   - The YouTubeDownloader class is responsible for handling the download and frame extraction operations for YouTube videos.
+   - It takes parameters such as save_directory, resolution, format, framerate, and audio during initialization.
+   - The save_directory specifies the directory where the downloaded video and extracted frames will be saved.
+   - The resolution determines the maximum resolution of the video to be downloaded.
+   - The format specifies the video format, such as 'mp4'.
+   - The framerate (optional) specifies the desired framerate of the video.
+   - The audio parameter determines whether to include audio in the downloaded video.
+   - It also maintains attributes such as video_title, video_path, and frame_dir_path to store relevant information.
+ - download_video(video_url) Method:
+   - This method uses the youtube_dl library to download a video from the given video_url.
+   - It extracts the video title and replaces spaces with underscores in the video_title attribute.
+   - It builds the necessary options and formats for the download using youtube_dl.YoutubeDL and then initiates the download.
+ - _build_format_string() Method:
+   - This method constructs the format string for the video download based on the specified attributes during initialization.
+   - It considers the desired resolution, video format, and optionally the framerate and audio settings.
+   - The format string is built accordingly and returned.
+ - _build_output_template() Method:
+   - This method constructs the output template for saving the downloaded video.
+   - It ensures that the save directory exists and sets the video_path attribute accordingly.
+   - The constructed template is returned.
+ - extract_frames(path_out, frame_list) Method:
+   - This method extracts frames from the downloaded video.
+   - It takes the output path for saving the frames and a list of frame numbers to extract.
+   - It creates the output directory if it doesn't exist and sets the frame_dir_path attribute.
+   - It uses OpenCV (cv2) to read the video frames and save the specified frames as individual images.
+   - The frame numbers are rounded and used to seek to the corresponding positions in the video.
+   - The extracted frames are saved with filenames in the format video_title_frameXXX.jpg.
+ - Main Execution:
+   - The code demonstrates an example usage of the YouTubeDownloader class.
+   - An instance of YouTubeDownloader is created with a specified save directory, resolution, format, framerate, and audio settings.
+   - A YouTube video URL is provided, and the download_video method is called to download the video.
+   - The extract_frames method is then called with the output path for frames and a list of frame numbers to extract.
+   - Finally, the attributes video_path, frame_dir_path, and video_title are printed to showcase the relevant information.
 
 ### 4. extracting_gpt.py
 

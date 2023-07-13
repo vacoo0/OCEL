@@ -1,7 +1,5 @@
 # Creating object-centric event logs from instructional/tutorial/how to videos
 
-A brief description of your project goes here.
-
 ## Table of Contents
 
 - [Project Description](#project-description)
@@ -10,8 +8,6 @@ A brief description of your project goes here.
 - [Usage](#usage)
 - [Example Results](#example-results)
 - [Features](#features)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Project Description
 
@@ -72,6 +68,11 @@ It is important that the link does not contain 'shorts'.
 ## Example Results
 
 Sample ocel files are provided in 'logs' folder.
+
+Youtube videos for testing purposes:
+   - https://www.youtube.com/watch?v=WC_upRGlvMs&ab_channel=Mashable
+   - https://www.youtube.com/watch?v=iNBTSDryewM
+   - https://www.youtube.com/watch?v=Y5UqE_hpuSw&ab_channel=NickDiGiovanni
 
 Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.com/watch?v=Y5UqE_hpuSw).
 

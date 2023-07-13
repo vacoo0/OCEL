@@ -10,17 +10,23 @@ import pandas as pd
 # log = pm4py.write_ocel2_sqlite(ocel, '<path_to_export_to>')
 
 class Event:
+    """
+    A Class for storing information about a single event.
+    """
     def __init__(self, event_id, timestamp, activity, duration, summary, items_text, items_image) -> None:
         self.event_id = event_id
         self.timestamp = timestamp
         self.activity = activity
-        self.duration = duration #???
-        self.summary = summary #????
+        self.duration = duration
+        self.summary = summary
         self.items_text = items_text
         self.items_image = items_image
         
 
 class EventLog:
+    """
+    A Class for storing the event log information, creating the OCEL and exporting to CSV.
+    """
     def __init__(self):
         self.events = []
     
@@ -34,6 +40,9 @@ class EventLog:
         return self.events
     
     def create_dataframe(self):
+        """
+        Returns a DataFrame for creating the OCEL using pm4py
+        """
         event_ids = []
         timestamps = []
         activities = []
@@ -64,6 +73,9 @@ class EventLog:
         
 
     def save_OCEL_standard(self, file_name='ocel_test_33.csv'):
+        """
+        Writes to CSV
+        """
         pm4py.write.write_ocel_csv(self.create_ocel(), f'./logs/events/{file_name}', f'./logs/objects/{file_name}')
         # pm4py.write.write_ocel_csv(self.create_ocel(), 'ocel_test.csv', 'ocel_test_cd.csv')
 

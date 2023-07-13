@@ -8,6 +8,8 @@ from detect_objects import ObjectDetector
 import re
 import os
 import openai
+from transformers import pipeline
+
 
 openai.api_key = "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"
 
@@ -21,6 +23,8 @@ class Processing:
         self.objects_image = None
         self.actions = None
         self.event_log = EventLog()
+        self.summarries = None
+        self.durrations = None
 
     def download_transcripts(self):
         film_id = extract_youtube_id(self.url)
@@ -34,7 +38,7 @@ class Processing:
         prompt = """{}, based on timestamps and text give an objects, action and start for every step in format: 
                 Step i: ; Action: ; Objects: ,... ; Start: """.format(self.transcript),
         temperature=1,
-        max_tokens=2048,
+        max_tokens=2800,
         top_p=1.0,
         frequency_penalty=0.0,
         presence_penalty=0.0
@@ -55,15 +59,29 @@ class Processing:
         detector.initialize_model()
         self.objects_image = detector.detect_objects()
 
+    def summary(self):
+        summarizer = pipeline("summarization", model="models/bart-large-cnn")
+        self.summarries = []
+        for dct in self.transcript:
+            self.summarries.append(summarizer(dct['text'], max_length=5, min_length=1, do_sample=False))
+    
+    def generate_durations(self):
+        self.durrations = []
+        for i in range(len(self.timestamps[:-1])):
+            self.durrations.append(self.timestamps[i+1]-self.timestamps[i])
+        self.durrations.append(0)
+    
     def generate_OCEL(self):
         self.gpt_processing()
         self.object_recognition()
+        # self.summary()
+        self.generate_durations()
         length = len(self.actions)
         for i in range(length):
             event = Event(i, "{:.2f}".format(round(self.timestamps[i],2)), self.actions[i],
-                          None, None, " AND ".join(self.objects_text[i]), " AND ".join(self.objects_image[i]))
+                          "{:.2f}".format(round(self.durrations[i],2)), None, " AND ".join(self.objects_text[i]), " AND ".join(self.objects_image[i]))
             self.event_log.add_event(event)
-        self.event_log.save_OCEL_standard(file_name='ocel_test4.csv')
+        self.event_log.save_OCEL_standard(file_name='ocel_test6.csv')
 
 
 def extract_youtube_id(url):
@@ -77,7 +95,7 @@ def extract_youtube_id(url):
 
 
 if __name__ == "__main__":
-    obj = Processing('https://www.youtube.com/watch?v=NbRDzNx1I5A')
+    obj = Processing('https://www.youtube.com/watch?v=ZSNZ68FoaJI&ab_channel=StevetheBartender')
     obj.generate_OCEL()
     
     

@@ -1,0 +1,13 @@
+ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:ocel:type:items_text,ocel:type:ocel:type:items_image
+0,Making French fries,0.03,1.62,,['Potatoes'],['person']
+1,Cutting Potatoes,1.65,2.70,,['Potatoes'],
+2,Ensuring even thickness,4.35,1.68,,['Potatoes'],['bottle']
+3,Soaking Potatoes,6.03,2.40,,['Potatoes'],['person']
+4,Drying Potatoes,8.43,2.40,,['Potatoes'],"['person', 'bottle']"
+5,Coating Potatoes with oil and seasoning,10.83,5.61,,['Potatoes'],"['person', 'dining table']"
+6,Pre-heating air fryer,16.44,5.91,,['Air fryer'],['bowl']
+7,Placing Potatoes in air fryer,22.35,2.19,,"['Potatoes', 'Air fryer']","['person', 'cell phone']"
+8,Cooking Potatoes in air fryer,24.54,2.79,,"['Potatoes', 'Air fryer']",['person']
+9,Stirring Potatoes,27.33,3.54,,"['Potatoes', 'Air fryer']","['person', 'bowl']"
+10,Adding seasoning,30.87,34.59,,['Potatoes'],['person']
+11,Reheating Potatoes,65.46,0.00,,"['Potatoes', 'Air fryer']",['person']

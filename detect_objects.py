@@ -1,13 +1,19 @@
 import os
-import cv2
 from PIL import Image
 from transformers import YolosImageProcessor, YolosForObjectDetection
 import torch
 
 class ObjectDetector:
-    def __init__(self, model_dir, model_type='yolos-tiny', frames_dir='./frames', video_title=None):
+    """
+    A Class for detecting the objects in the frames using yolos-tiny.
+    """
+    def __init__(self, model_dir, frames_dir='./frames', video_title=None):
+        """
+        :param string model_dir:   location of the model
+        :param string frames_dir:  directory with the extracted frames
+        :param string video_title: title of the video
+        """
         self.model_dir = model_dir
-        self.model_type = model_type
         self.frames_dir = frames_dir
         self.video_title = video_title.rsplit('.', 1)[0]  # remove file extension, if any
         self.model = None
@@ -19,6 +25,10 @@ class ObjectDetector:
         self.image_processor = YolosImageProcessor.from_pretrained(self.model_dir)
 
     def detect_objects(self):
+        """
+        Detects objects in each frame. Iterates over each frame with the matching video title in the frame directory.
+        Returns a list of lists of detected objects.
+        """
         objects_detected = []
 
         frame_files = sorted(os.listdir(self.frames_dir))
@@ -26,7 +36,6 @@ class ObjectDetector:
             if frame_file.startswith(self.video_title):
                 frame_path = os.path.join(self.frames_dir, frame_file)
                 print(frame_path)
-                # frame = cv2.imread(frame_path)
                 frame = Image.open(frame_path)
 
                 inputs = self.image_processor(images=frame, return_tensors='pt')

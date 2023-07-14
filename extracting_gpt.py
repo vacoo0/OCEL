@@ -12,6 +12,9 @@ text = """
 """
 
 def extracting_gpt(text):
+    """
+    Helper function for getting the list of objects, events and timestamps from the openai API output.
+    """
     pattern = r"Step \d+:.+?(?=n?Step \d+|$)"
     matches = re.findall(pattern, text, re.DOTALL)
 

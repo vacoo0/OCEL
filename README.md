@@ -90,6 +90,10 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 | 8  | Eating                   | 54.56  | 0.00  | ['soup dumplings']  | ['person', 'spoon', 'bowl']  |
 
 ## Files description - Step by step
+
+The project consists of four folders:
+1. 
+
 ### 1. processing.py
 
  Main file which we execute. The necessary libraries and modules are imported, including custom modules like events, download_video_ydl, youtube_transcript_api,     extracting_gpt, and detect_objects.

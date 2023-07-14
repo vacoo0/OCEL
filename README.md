@@ -234,4 +234,6 @@ Below are some useful links.
 
 ## Contact
 
-Provide your contact information or links to your social media profiles. Encourage users to reach out with questions, feedback, or suggestions.
+If you have any questions, please contact us at this email address:
+
+*mspinczyk@student.agh.edu.pl*

@@ -1,8 +1,3 @@
-# pm4py.convert.convert_log_to_ocel(log: Union[EventLog, EventStream, DataFrame], activity_column: str = 'concept:name', timestamp_column: str = 'time:timestamp', 
-#                                   object_types: Optional[Collection[str]] = None, 
-#                                   obj_separator: str = ' AND ', additional_event_attributes: Optional[Collection[str]] = None) → OCEL
-
-# pm4py.convert.convert_log_to_ocel
 import datetime
 import pm4py
 import pandas as pd

@@ -92,7 +92,10 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 ## Files description - Step by step
 
 The project consists of four folders:
-1. 
+1. `frames` - relevant frames are saved here.
+2. `logs` - event logs are saved in the `events` subfolder and objects in the `objects` subfolder.
+3. `models` - a folder for storing some models, e.g. `yolos-tiny`
+4. `videos` - folder where YT videos are downloaded.
 
 ### 1. processing.py
 

@@ -6,6 +6,7 @@
 - [Overview](#overview)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Limitations](#limitations)
 - [Example Results](#example-results)
 - [Files description - Step by step](#files-description---Step-by-step)
 - [Features](#features)
@@ -65,6 +66,10 @@ if __name__ == "__main__":
     obj.generate_OCEL('ocel_example.csv')
 ```
 It is important that the link does not contain 'shorts'. 
+
+## Limitations
+
+The main limitation is the length of the video, and more specifically the length of the text from the transcript. Due to the fact that GPT-3.5 has a strictly defined number of tokens at the input and output, with longer films fragments than about 2 minutes, the transcripts should be divided into smaller parts and thus submitted to GPT (direction of further development).
 
 ## Example Results
 

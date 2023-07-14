@@ -224,8 +224,7 @@ Example for [https://www.youtube.com/watch?v=Y5UqE_hpuSw](https://www.youtube.co
 
 ## Features
 
-List the key features of your project here. Highlight the main functionalities or components that make your project stand out.
-
+There are three notebooks in the repository: `summarization_examples.ipynb`, `transcripts_examples.ipynb` and `video_examples.ipynb`. You can see how it works and what it returns, e.g. gpt-3.5 or functions downloading transcripts.
 ## Acknowledgements
 
 Below are some useful links.

@@ -13,6 +13,9 @@ openai.api_key = "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"
 
 
 class Processing:
+    """
+    Main Class of the whole application. Contains all the necessary modules to generate the OCEL.
+    """
     def __init__(self, yt_url) -> None:
         self.url = yt_url
         self.transcript = self.download_transcripts()
@@ -25,12 +28,19 @@ class Processing:
         self.durrations = None
 
     def download_transcripts(self):
+        """
+        Audio transcripts using the YouTubeTranscriptApi.
+        """
         film_id = extract_youtube_id(self.url)
         transcript_list = YouTubeTranscriptApi.list_transcripts(film_id)
         transcript = transcript_list.find_transcript(['en'])
         return transcript.fetch()
 
     def gpt_processing(self):
+        """
+        Method that uses the openai API to receive and save the actions. The prompt are the video transcripts
+        with the timestamps.
+        """
         response = openai.Completion.create(
         model="text-davinci-003",
         prompt = """{}, based on timestamps and text give an objects, action and start for every step in format: 
@@ -49,6 +59,9 @@ class Processing:
         self.actions = actions
 
     def object_recognition(self):
+        """
+        Method which downloads the video and saves the list of objects detected in the images.
+        """
         ytd = YouTubeDownloader(save_directory='./videos', resolution='720',
                                        format='mp4', framerate=None, audio=False)
         ytd.download_video(self.url)
@@ -58,18 +71,27 @@ class Processing:
         self.objects_image = detector.detect_objects()
 
     def summary(self):
+        """
+        Unused method for generating summaries for each event in the log.
+        """
         summarizer = pipeline("summarization", model="models/bart-large-cnn")
         self.summarries = []
         for dct in self.transcript:
             self.summarries.append(summarizer(dct['text'], max_length=5, min_length=1, do_sample=False))
     
     def generate_durations(self):
+        """
+        Get the duration of each event.
+        """
         self.durrations = []
         for i in range(len(self.timestamps[:-1])):
             self.durrations.append(self.timestamps[i+1]-self.timestamps[i])
         self.durrations.append(0)
     
     def generate_OCEL(self, file_name='ocel_test8.csv'):
+        """
+        Method which executes all the steps to create the event log.
+        """
         self.gpt_processing()
         self.object_recognition()
         # self.summary()
@@ -84,6 +106,9 @@ class Processing:
 
 
 def extract_youtube_id(url):
+    """
+    Helper function for extracting the video id from the YouTube link.
+    """
     pattern = r"(?:youtu.be\/|youtube.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&\/]+)"
     match = re.search(pattern, url)
 

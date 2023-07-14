@@ -1,0 +1,14 @@
+ocel:oid,ocel:type
+Engine,ocel:type:items_text
+car,ocel:type:items_image
+person,ocel:type:items_image
+Yourself,ocel:type:items_text
+Spark Plugs,ocel:type:items_text
+Latex Gloves,ocel:type:items_text
+Socket,ocel:type:items_text
+Extension and Ratchet,ocel:type:items_text
+Wires,ocel:type:items_text
+motorcycle,ocel:type:items_image
+Antiseize Lubrication,ocel:type:items_text
+chair,ocel:type:items_image
+Torque Wrench,ocel:type:items_text

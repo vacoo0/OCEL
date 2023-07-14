@@ -1,0 +1,17 @@
+ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:items_text,ocel:type:items_image
+0,Shut off engine,1.70,10.27,,['Engine'],"['car', 'person']"
+1,Listen to tips,11.97,2.19,,['Yourself'],['person']
+2,Change spark plugs,14.16,1.50,,['Spark Plugs'],['person']
+3,Wear latex gloves,15.66,2.79,,['Latex Gloves'],['person']
+4,Know when to change,18.45,2.34,,['Yourself'],['person']
+5,Use tools,20.79,2.55,,"['Socket', 'Extension and Ratchet']",['person']
+6,Access Spark Plugs,23.34,3.24,,['Wires'],['motorcycle']
+7,Buy new spark plugs,26.58,7.17,,['Spark Plugs'],"['person', 'motorcycle']"
+8,Stick plugs in,33.75,20.13,,['Spark Plugs'],['person']
+9,Unscrew,53.88,7.86,,['Spark Plugs'],['person']
+10,Tighten,61.74,6.57,,['Spark Plugs'],['person']
+11,Add Lubrication,68.31,17.34,,['Antiseize Lubrication'],"['person', 'chair']"
+12,Stick tight,85.65,6.33,,['Spark Plugs'],['person']
+13,Reattach wires,91.98,14.49,,['Wires'],
+14,Use torque wrench,106.47,7.35,,['Torque Wrench'],['person']
+15,Make even,113.82,0.00,,['Spark Plugs'],['person']

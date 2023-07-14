@@ -1,0 +1,19 @@
+ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:items_text,ocel:type:items_image
+0,Poll asking,0.00,1.80,,['Kind of summertime recipes'],"['person', 'bowl', 'laptop']"
+1,Responding,1.80,1.44,,['Majority'],['oven']
+2,Requests,3.24,1.44,,['Salads'],
+3,Combining,4.68,1.38,,['Two favorite summertime salads'],['person']
+4,Wedge up,6.06,1.32,,['Cooked Yukon Gold potatoes'],['oven']
+5,Smash,7.38,1.50,,['Cucumbers'],['oven']
+6,Bring,8.88,1.20,,['Salads to barbecue'],['bowl']
+7,Adding,10.08,1.26,,['Red onion'],['donut']
+8,Adding,11.34,1.26,,['Herbs'],['person']
+9,Doing,12.60,1.80,,['Tahini dressing'],"['knife', 'person', 'banana']"
+10,Adding,14.40,1.68,,['Whole grain mustard'],"['knife', 'person']"
+11,Adding,16.08,1.62,,"['Lemon juice', 'lemon zest', 'fresh grated ginger']",
+12,Doing,17.70,1.68,,['Tahini dressing'],"['person', 'oven', 'dining table']"
+13,Adding,19.38,1.32,,['Olive oil'],"['person', 'oven', 'knife']"
+14,Pouring,20.70,2.40,,['Dressing'],
+15,Tossing,23.10,1.44,,['Salad'],['toothbrush']
+16,Garnishing,24.54,1.50,,"['Herbs', 'sesame seeds']","['person', 'oven']"
+17,Making,26.04,0.00,,['Salad ahead'],"['person', 'oven']"

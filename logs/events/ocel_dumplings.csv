@@ -1,4 +1,4 @@
-ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:ocel:type:items_text,ocel:type:ocel:type:items_image
+ocel:eid,ocel:activity,ocel:timestamp,duration,summary,ocel:type:items_text,ocel:type:items_image
 0,Making soup dumplings,0.08,1.92,,['None'],"['person', 'dining table', 'cup']"
 1,Taking Chinese,2.00,1.44,,['None'],"['person', 'cup']"
 2,Pronouncing Xiaolongbao,3.44,1.68,,['None'],"['person', 'cup']"
